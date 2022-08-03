@@ -15,4 +15,9 @@ class ResponseWrapper{
             'data'=> $id
         ]);
     }
+    public static function errorResponse($message, $code){
+        return response()->json([
+            'message'=> $message
+        ],$code);
+    }
 }

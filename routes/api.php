@@ -27,4 +27,6 @@ Route::post('login', [UserController::class, 'login']);
 Route::group(['middleware'=>['auth:api']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('categories', CategoryController::class);
+    Route::post('/forgot-password', [UserController::class, 'forgotPassword']);
+    Route::post('/reset-password/{token}', [UserController::class, 'resetPassword']);
 });
